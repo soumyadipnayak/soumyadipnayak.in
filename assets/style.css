@@ -1,0 +1,155 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#home {
+    opacity: 0;
+    transition: opacity 0.8s ease-in;
+}
+
+/* Class to fade the content in */
+.content-visible {
+    opacity: 1 !important;
+}
+
+/* Keep the canvas hidden as we did before */
+#vanta-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+}
+
+#vanta-canvas.vanta-loaded {
+    opacity: 1;
+}
+
+/* 2. Optimized Animation Timing */
+@keyframes quickPopShrink {
+  0% {
+    opacity: 0;
+    transform: scale(1.4);
+    filter: blur(8px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0px);
+  }
+}
+
+@keyframes quickSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-intro {
+  display: inline-block;
+  /* Reduced to 0.8s for a snappy feel */
+  animation: quickPopShrink 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.animate-reveal {
+  /* Reveal starts much sooner (0.6s delay) */
+  animation: quickSlideUp 0.6s ease-out forwards;
+  animation-delay: 0.6s;
+}
+
+.wave {
+  animation-name: wave-animation;
+  /* Refers to the name of your @keyframes element below */
+  animation-duration: 2.5s;
+  /* Change to speed up or slow down */
+  animation-iteration-count: infinite;
+  /* Never stop waving :) */
+  transform-origin: 70% 70%;
+  /* Pivot around the bottom-left palm */
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  10% {
+    transform: rotate(14deg);
+  }
+
+  /* The following five values can be played with to make the waving more or less extreme */
+  20% {
+    transform: rotate(-8deg);
+  }
+
+  30% {
+    transform: rotate(14deg);
+  }
+
+  40% {
+    transform: rotate(-4deg);
+  }
+
+  50% {
+    transform: rotate(10deg);
+  }
+
+  60% {
+    transform: rotate(0deg);
+  }
+
+  /* Reset for the last half to pause */
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
+/* Highlights the current page in the navbar */
+.nav-link.active {
+    background-color: #473fff;
+    color: white !important;
+}
+
+.nav-link.active span {
+    transform: scale(1.1); /* Keep the text slightly zoomed when active */
+}
+
+/* Mobile specific active state */
+#mobileMenu .nav-link.active {
+    background-color: rgba(71, 63, 255, 0.2); /* 20% opacity of your blue */
+    color: #473fff !important;
+    border-left: 3px solid #473fff;
+    border-radius: 8px 12px 12px 8px;
+}
+
+/* Smooth opening animation */
+#mobileMenu:not(.hidden) {
+    display: flex;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
