@@ -12,12 +12,10 @@ body {
     transition: opacity 0.8s ease-in;
 }
 
-/* Class to fade the content in */
 .content-visible {
     opacity: 1 !important;
 }
 
-/* Keep the canvas hidden as we did before */
 #vanta-canvas {
     position: fixed;
     inset: 0;
@@ -30,7 +28,6 @@ body {
     opacity: 1;
 }
 
-/* 2. Optimized Animation Timing */
 @keyframes quickPopShrink {
   0% {
     opacity: 0;
@@ -59,26 +56,20 @@ body {
 
 .animate-intro {
   display: inline-block;
-  /* Reduced to 0.8s for a snappy feel */
   animation: quickPopShrink 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   will-change: transform, opacity;
 }
 
 .animate-reveal {
-  /* Reveal starts much sooner (0.6s delay) */
   animation: quickSlideUp 0.6s ease-out forwards;
   animation-delay: 0.6s;
 }
 
 .wave {
   animation-name: wave-animation;
-  /* Refers to the name of your @keyframes element below */
   animation-duration: 2.5s;
-  /* Change to speed up or slow down */
   animation-iteration-count: infinite;
-  /* Never stop waving :) */
   transform-origin: 70% 70%;
-  /* Pivot around the bottom-left palm */
   display: inline-block;
 }
 
@@ -91,7 +82,6 @@ body {
     transform: rotate(14deg);
   }
 
-  /* The following five values can be played with to make the waving more or less extreme */
   20% {
     transform: rotate(-8deg);
   }
@@ -112,14 +102,11 @@ body {
     transform: rotate(0deg);
   }
 
-  /* Reset for the last half to pause */
   100% {
     transform: rotate(0deg);
   }
 }
 
-
-/* Highlights the current page in the navbar */
 .nav-link.active {
     background-color: #473fff;
     color: white !important;
@@ -129,7 +116,6 @@ body {
     transform: scale(1.1); /* Keep the text slightly zoomed when active */
 }
 
-/* Mobile specific active state */
 #mobileMenu .nav-link.active {
     background-color: rgba(71, 63, 255, 0.2); /* 20% opacity of your blue */
     color: #473fff !important;
@@ -137,7 +123,6 @@ body {
     border-radius: 8px 12px 12px 8px;
 }
 
-/* Smooth opening animation */
 #mobileMenu:not(.hidden) {
     display: flex;
     animation: slideDown 0.3s ease-out;
