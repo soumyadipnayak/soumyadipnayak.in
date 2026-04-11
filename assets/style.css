@@ -3,9 +3,16 @@ body {
     margin: 0;
     padding: 0;
     width: 100%;
-    overflow-x: hidden; 
-    overflow-y: auto; 
     min-height: 100vh;
+}
+
+body {
+  background: linear-gradient(
+    to bottom right,
+    #000000,
+    #111111,
+    #2c2c54
+);
 }
 
 #home {
@@ -15,18 +22,6 @@ body {
 
 .content-visible {
     opacity: 1 !important;
-}
-
-#vanta-canvas {
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 1s ease-in;
-}
-
-#vanta-canvas.vanta-loaded {
-    opacity: 1;
 }
 
 @keyframes quickPopShrink {
@@ -108,16 +103,16 @@ body {
   }
 }
 
-.nav-link.active {
+.nav-link.active:not(#profilePic) {
     background-color: #473fff;
     color: white !important;
 }
 
-.nav-link.active span {
+.nav-link.active:not(#profilePic) span {
     transform: scale(1.1); /* Keep the text slightly zoomed when active */
 }
 
-#mobileMenu .nav-link.active {
+#mobileMenu .nav-link.active:not(#profilePic) {
     background-color: rgba(71, 63, 255, 0.2); /* 20% opacity of your blue */
     color: #473fff !important;
     border-left: 3px solid #473fff;
@@ -138,4 +133,25 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+.present {
+  box-shadow: 0 0 6px rgba(71, 63, 255, 0.6);
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0% {
+    box-shadow: 0 0 4px rgba(71, 63, 255, 0.4);
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    box-shadow: 0 0 12px rgba(71, 63, 255, 1),
+                0 0 20px rgba(71, 63, 255, 0.6);
+    transform: translateX(-50%) scale(1.15);
+  }
+  100% {
+    box-shadow: 0 0 4px rgba(71, 63, 255, 0.4);
+    transform: translateX(-50%) scale(1);
+  }
 }

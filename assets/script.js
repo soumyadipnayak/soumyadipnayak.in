@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btn.innerHTML = isHidden ? '☰' : '✕';
     });
 
-    window.showPage = function(pageId) {
+    function showPage(pageId, addToHistory = true) {
         document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
 
         const targetPage = document.getElementById(pageId);
@@ -25,7 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         menu.classList.add('hidden');
         btn.innerHTML = '☰';
-    };
+
+        if (addToHistory) {
+            history.pushState({ page: pageId }, "", `#${pageId}`);
+        }
+    }
+
+    window.showPage = showPage;
 
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
@@ -34,22 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    VANTA.NET({
-        el: "#vanta-canvas",
-        mouseControls: true,
-        touchControls: true,
-        gyroControls: true,
-        minHeight: 200.00,
-        minWidth: 200.00,
-        scale: 1.00,
-        scaleMobile: 1.00,
-        color: 0x473fff,
-        backgroundColor: 0x0
+    window.addEventListener('popstate', (event) => {
+        if (event.state && event.state.page) {
+            showPage(event.state.page, false);
+        } else {
+            showPage('home', false);
+        }
     });
 
-    setTimeout(() => {
-        const canvas = document.getElementById('vanta-canvas');
-        if (canvas) canvas.classList.add('vanta-loaded');
-        showPage('home');
-    }, 100);
+    const initialPage = window.location.hash.replace('#', '') || 'home';
+    showPage(initialPage, false);
 });
