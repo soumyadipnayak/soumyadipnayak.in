@@ -51,9 +51,3 @@ document.addEventListener('DOMContentLoaded', () => {
     const initialPage = window.location.hash.replace('#', '') || 'home';
     showPage(initialPage, false);
 });
-
-window.addEventListener("pageshow", function (event) {
-  if (event.persisted) {
-    window.location.reload();
-  }
-});
