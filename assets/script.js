@@ -50,4 +50,65 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const initialPage = window.location.hash.replace('#', '') || 'home';
     showPage(initialPage, false);
+
+    // Contact dropdowns
+    const contactBtn = document.getElementById('contactBtn');
+    const contactDropdown = document.getElementById('contactDropdown');
+
+    const mobileContactBtn = document.getElementById('mobileContactBtn');
+    const mobileContactDropdown = document.getElementById('mobileContactDropdown');
+
+    function closeContactDropdowns() {
+        [contactDropdown, mobileContactDropdown].forEach(dropdown => {
+            if (dropdown) {
+                dropdown.classList.add('hidden');
+            }
+        });
+
+        [contactBtn, mobileContactBtn].forEach(button => {
+            if (button) {
+                button.setAttribute('aria-expanded', 'false');
+            }
+        });
+    }
+
+    function toggleContactDropdown(button, dropdown) {
+        if (!button || !dropdown) return;
+
+        const shouldOpen = dropdown.classList.contains('hidden');
+
+        closeContactDropdowns();
+
+        if (shouldOpen) {
+            dropdown.classList.remove('hidden');
+            button.setAttribute('aria-expanded', 'true');
+        }
+    }
+
+    // Desktop
+    contactBtn?.addEventListener('click', (event) => {
+        event.stopPropagation();
+        toggleContactDropdown(contactBtn, contactDropdown);
+    });
+
+    // Mobile
+    mobileContactBtn?.addEventListener('click', (event) => {
+        event.stopPropagation();
+        toggleContactDropdown(
+            mobileContactBtn,
+            mobileContactDropdown
+        );
+    });
+
+    // Prevent clicks inside dropdown from closing it
+    [contactDropdown, mobileContactDropdown].forEach(dropdown => {
+        dropdown?.addEventListener('click', (event) => {
+            event.stopPropagation();
+        });
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', () => {
+        closeContactDropdowns();
+    });
 });

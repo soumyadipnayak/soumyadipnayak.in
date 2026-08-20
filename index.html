@@ -90,6 +90,7 @@
             <a
               href="https://github.com/soumyadipnayak"
               target="_blank"
+              rel="noopener noreferrer"
               class="group flex items-center justify-center w-10 h-10 border border-transparent hover:border-primary rounded-full transition-all duration-300 hover:bg-[#2c2c54]"
             >
               <i
@@ -100,6 +101,7 @@
             <a
               href="https://www.linkedin.com/in/soumyadip-nayak/"
               target="_blank"
+              rel="noopener noreferrer"
               class="group flex items-center justify-center w-10 h-10 border border-transparent hover:border-primary rounded-full transition-all duration-300 hover:bg-[#2c2c54]"
             >
               <i
@@ -107,14 +109,63 @@
               ></i>
             </a>
 
-            <a
-              href="mailto:nayaksoumyadip@gmail.com"
-              class="group flex items-center justify-center w-10 h-10 border border-transparent hover:border-primary rounded-full transition-all duration-300 hover:bg-[#2c2c54]"
-            >
-              <i
-                class="fa-regular fa-envelope text-gray-300 group-hover:text-primary transition-transform duration-300 group-hover:scale-125"
-              ></i>
-            </a>
+            <!-- Contact Dropdown -->
+            <div class="contact-dropdown relative">
+              <button
+                id="contactBtn"
+                type="button"
+                aria-expanded="false"
+                aria-controls="contactDropdown"
+                class="group flex items-center justify-center w-10 h-10 border border-transparent hover:border-primary rounded-full transition-all duration-300 hover:bg-[#2c2c54]"
+              >
+                <i
+                  class="fa-regular fa-envelope text-gray-300 group-hover:text-primary transition-transform duration-300 group-hover:scale-125"
+                ></i>
+              </button>
+
+              <div
+                id="contactDropdown"
+                class="contact-dropdown-menu hidden absolute right-0 top-12 w-80 rounded-2xl border border-gray-700 bg-gray-950/95 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.45)] p-3"
+              >
+                <p class="px-3 pt-2 pb-3 text-xs uppercase tracking-wider text-slate-500 font-semibold">
+                  Emails
+                </p>
+
+                <div class="email-list">
+                  <!-- Personal Email -->
+                  <a
+                    href="mailto:nayaksoumyadip@gmail.com"
+                    class="contact-option"
+                  >
+                    <span class="contact-option-icon">
+                      <i class="fa-regular fa-envelope"></i>
+                    </span>
+
+                    <span class="min-w-0">
+                      <span class="contact-option-email">
+                        nayaksoumyadip@gmail.com
+                      </span>
+                    </span>
+                  </a>
+
+                  <!-- Official Email -->
+                  <a
+                    href="mailto:O25MCA111242@cuchd.in"
+                    class="contact-option"
+                  >
+                    <span class="contact-option-icon">
+                      <i class="fa-solid fa-briefcase"></i>
+                    </span>
+
+                    <span class="min-w-0">
+                      <span class="contact-option-email">
+                        O25MCA111242@cuchd.in
+                      </span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
 
           <button id="menuBtn" class="md:hidden text-xl p-1">☰</button>
@@ -144,24 +195,81 @@
         <div
           class="flex items-center gap-4 pt-4 mt-2 border-t border-gray-800/50"
         >
+          <!-- GitHub -->
           <a
             href="https://github.com/soumyadipnayak"
             target="_blank"
-            class="text-gray-400 text-xl"
-            ><i class="fa-brands fa-github"></i
-          ></a>
+            rel="noopener noreferrer"
+            class="text-gray-400 text-xl hover:text-primary transition-colors"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+
+          <!-- LinkedIn -->
           <a
             href="https://linkedin.com/in/soumyadip-nayak/"
             target="_blank"
-            class="text-gray-400 text-xl"
-            ><i class="fa-brands fa-linkedin"></i
-          ></a>
-          <a
-            href="mailto:nayaksoumyadip@gmail.com"
-            target="_blank"
-            class="text-gray-400 text-xl"
-            ><i class="fa-regular fa-envelope"></i
-          ></a>
+            rel="noopener noreferrer"
+            class="text-gray-400 text-xl hover:text-primary transition-colors"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+
+          <!-- Contact Dropdown -->
+          <div class="mobile-contact-dropdown relative">
+            <button
+              id="mobileContactBtn"
+              type="button"
+              aria-expanded="false"
+              aria-controls="mobileContactDropdown"
+              class="text-gray-400 text-xl hover:text-primary transition-colors"
+            >
+              <i class="fa-regular fa-envelope"></i>
+            </button>
+
+            <div
+              id="mobileContactDropdown"
+              class="contact-dropdown-menu hidden absolute left-0 bottom-10 w-[calc(100vw-3rem)] max-w-80 rounded-2xl border border-gray-700 bg-gray-950/95 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.45)] p-3"
+            >
+              <p class="px-3 pt-2 pb-3 text-xs uppercase tracking-wider text-slate-500 font-semibold">
+                Emails
+              </p>
+
+              <div class="email-list">
+                <!-- Personal Email -->
+                <a
+                  href="mailto:nayaksoumyadip@gmail.com"
+                  class="contact-option"
+                >
+                  <span class="contact-option-icon">
+                    <i class="fa-regular fa-envelope"></i>
+                  </span>
+
+                  <span class="min-w-0">
+                    <span class="contact-option-email">
+                      nayaksoumyadip@gmail.com
+                    </span>
+                  </span>
+                </a>
+
+                <!-- Official Email -->
+                <a
+                  href="mailto:O25MCA111242@cuchd.in"
+                  class="contact-option"
+                >
+                  <span class="contact-option-icon">
+                    <i class="fa-solid fa-briefcase"></i>
+                  </span>
+
+                  <span class="min-w-0">
+                    <span class="contact-option-email">
+                      O25MCA111242@cuchd.in
+                    </span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
@@ -473,21 +581,120 @@
         </div>
       </section>
 
-      <section
+       <section
         id="works"
-        class="page hidden min-h-[70vh] flex flex-col items-center justify-center text-center px-4"
+        class="page hidden min-h-[70vh] py-20 px-6 max-w-6xl mx-auto"
       >
-        <h1
-          id="hero-title"
-          class="text-5xl md:text-7xl font-extrabold text-primary animate-intro"
-        >
-          My Works
-        </h1>
-
-        <div id="hero-desc" class="mt-6 max-w-2xl opacity-0 animate-reveal">
-          <p class="text-lg md:text-xl text-slate-300 leading-relaxed">
-            Great things take time! So does my work to be done 😅
+        <div class="text-center mb-14">
+          <h1
+            class="text-5xl md:text-7xl font-extrabold text-white animate-intro"
+          >
+            My <span class="text-[#473fff]">Works</span>
+          </h1>
+          <p class="mt-4 text-lg md:text-xl text-slate-400 animate-reveal">
+            Selected projects where data, machine learning, and engineering come together.
           </p>
+        </div>
+
+        <div class="max-w-5xl mx-auto">
+          <article
+            class="work-card group relative overflow-hidden bg-gray-900/70 rounded-3xl border border-gray-700 backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:border-[#473fff]/70 hover:shadow-[0_24px_70px_rgba(71,63,255,0.22)]"
+          >
+            <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#473fff] via-[#7c75ff] to-transparent"></div>
+
+            <div class="p-7 md:p-10">
+              <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                <div class="text-left max-w-3xl">
+                  <div class="flex flex-wrap items-center gap-3 mb-4">
+                    <span class="project-label">
+                      Machine Learning · FinTech
+                    </span>
+                  </div>
+
+                  <h2 class="text-3xl md:text-4xl font-bold text-white">
+                    Credit Risk Analysis Platform
+                  </h2>
+
+                  <p class="mt-5 text-slate-300 leading-relaxed text-base md:text-lg">
+                    An end-to-end credit risk analysis project focused on predicting
+                    loan default risk and comparing machine learning approaches.
+                    The project covers data preprocessing, feature analysis,
+                    customer segmentation, model development, and an interactive
+                    prediction interface.
+                  </p>
+                </div>
+
+                <div class="flex lg:flex-col gap-3 shrink-0">
+                  <a
+                    href="https://credit-risk-predictor-rhwr.onrender.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-button project-button-primary"
+                  >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    Live Demo
+                  </a>
+
+                  <a
+                    href="https://1drv.ms/p/c/53c938a49db73b7f/IQAxbJrxXwg5Tq_w1g0gGoAdAfYxfITX6VG6QfPmySTG1Mo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-button project-button-secondary"
+                  >
+                    <i class="fa-solid fa-file-powerpoint"></i>
+                    Presentation
+                  </a>
+                </div>
+              </div>
+
+              <div class="mt-9 grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+                <div class="project-detail">
+                  <div class="project-detail-icon">
+                    <i class="fa-solid fa-database"></i>
+                  </div>
+                  <div>
+                    <h3>Data Preparation</h3>
+                    <p>Imputation, preprocessing, feature analysis and model-ready transformations.</p>
+                  </div>
+                </div>
+
+                <div class="project-detail">
+                  <div class="project-detail-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                  </div>
+                  <div>
+                    <h3>Risk Modeling</h3>
+                    <p>Machine learning models evaluated for their ability to identify credit default risk.</p>
+                  </div>
+                </div>
+
+                <div class="project-detail">
+                  <div class="project-detail-icon">
+                    <i class="fa-solid fa-user-shield"></i>
+                  </div>
+                  <div>
+                    <h3>Risk Segmentation</h3>
+                    <p>Customer segmentation used to investigate differences in default behaviour.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8 pt-7 border-t border-gray-800">
+                <p class="text-sm uppercase tracking-wider text-[#7c75ff] font-semibold mb-4">
+                  Technologies & Techniques
+                </p>
+                <div class="flex flex-wrap gap-2.5">
+                  <span class="bg-[#473fff]/20 text-white px-4 py-1.5 rounded-full border border-[#7c75ff]/50 text-xs font-medium text-center inline-flex items-center justify-center min-w-[140px]">Python</span>
+                  <span class="bg-[#473fff]/20 text-white px-4 py-1.5 rounded-full border border-[#7c75ff]/50 text-xs font-medium text-center inline-flex items-center justify-center min-w-[140px]">Pandas</span>
+                  <span class="bg-[#473fff]/20 text-white px-4 py-1.5 rounded-full border border-[#7c75ff]/50 text-xs font-medium text-center inline-flex items-center justify-center min-w-[140px]">Scikit-learn</span>
+                  <span class="bg-[#473fff]/20 text-white px-4 py-1.5 rounded-full border border-[#7c75ff]/50 text-xs font-medium text-center inline-flex items-center justify-center min-w-[140px]">Machine Learning</span>
+                  <span class="bg-[#473fff]/20 text-white px-4 py-1.5 rounded-full border border-[#7c75ff]/50 text-xs font-medium text-center inline-flex items-center justify-center min-w-[140px]">Feature Engineering</span>
+                  <span class="bg-[#473fff]/20 text-white px-4 py-1.5 rounded-full border border-[#7c75ff]/50 text-xs font-medium text-center inline-flex items-center justify-center min-w-[140px]">Credit Risk</span>
+                  <span class="bg-[#473fff]/20 text-white px-4 py-1.5 rounded-full border border-[#7c75ff]/50 text-xs font-medium text-center inline-flex items-center justify-center min-w-[140px]">Model Evaluation</span>
+                </div>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
     </div>
